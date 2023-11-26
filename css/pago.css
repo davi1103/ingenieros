@@ -1,0 +1,66 @@
+/* Estilos para el contenedor general */
+.container_pago {
+    width: 50%; /* Ancho del contenedor */
+    margin: 100px auto 50px; /* Margen superior, auto centrado horizontal, y margen inferior */
+    padding: 20px;
+    border: 1px solid #ddd; /* Bordes del contenedor */
+    border-radius: 5px; /* Esquinas redondeadas */
+    background-color: #f9f9f9; /* Color de fondo */
+}
+
+/* Estilos para las tablas y botón dentro del contenedor de pago */
+.container_pago .payment-table, .container_pago .summary-table {
+    margin-bottom: 30px; /* Espacio entre tablas */
+}
+
+.container_pago .payment-table table, .container_pago .summary-table table {
+    width: 100%; /* Ancho completo de la tabla */
+    border-collapse: collapse; /* Colapsa los bordes de la tabla */
+}
+
+.container_pago .payment-table td, .container_pago .summary-table td {
+    padding: 8px; /* Relleno dentro de cada celda */
+    border: 1px solid #ddd; /* Bordes de las celdas */
+}
+
+.container_pago button {
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Hace que el botón ocupe su propia línea */
+    margin: 0 auto; /* Centra el botón */
+}
+
+.container_pago button:hover {
+    background-color: #0b7dda;
+}
+
+input[type="text"], input[type="date"] {
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus, input[type="date"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #367C39;
+}

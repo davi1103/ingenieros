@@ -1,0 +1,169 @@
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    color: #333;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../img/si.jpg);
+    background-size: cover;
+    opacity: 1; /* Ajusta la opacidad de la imagen de fondo */
+    z-index: -1; /* Coloca el fondo detrás del contenido */
+}
+
+.search-container {
+    display: flex; /* Alinea los elementos internos en línea */
+    justify-content: center; /* Centra los elementos internos horizontalmente */
+    align-items: center; /* Centra los elementos internos verticalmente */
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    margin: 0 auto; /* Centra el contenedor en la página */
+    gap: 10px; /* Espacio entre el campo de texto y el botón */
+    width: fit-content; /* Ajusta el ancho al contenido interno */
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    border: 2px solid #ccc; /* Borde para el campo de texto */
+    border-radius: 5px; /* Bordes redondeados para el campo de texto */
+    width: 250px; /* Ancho específico para el campo de texto */
+    outline: none; /* Remueve el contorno al enfocar */
+}
+
+.search-container input[type="text"]:focus {
+    border-color: #4CAF50; /* Cambia el color del borde al enfocar */
+}
+
+.search-container button {
+    padding: 10px 15px;
+    background-color: #4CAF50; /* Color de fondo para el botón */
+    color: white; /* Color de texto para el botón */
+    border: none; /* Remueve el borde del botón */
+    border-radius: 5px; /* Bordes redondeados para el botón */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave para el efecto hover */
+}
+
+.search-container button:hover {
+    background-color: #367c39; /* Color de fondo al pasar el ratón por encima */
+}
+
+.solicitud-container {
+    margin-top: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.solicitud-container input[readonly] {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+}
+.solicitud-container img {
+    max-width: 80px; /* Ajusta el ancho máximo para el tamaño de una foto carnet */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border: 1px solid #ddd; /* Opcional: añade un borde a la imagen */
+    border-radius: 5px; /* Opcional: redondea las esquinas de la imagen */
+    margin-top: 10px;
+}
+
+.estado-solicitud-container {
+    margin-top: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Fondo ligeramente diferente para distinguir los contenedores */
+}
+
+.estado-solicitud-container input[readonly] {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+}
+
+.estado-solicitud-container label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    text-align: left;
+}
+hr {
+    border: 0;
+    clear: both;
+    display: block;
+    width: 80%; /* Ancho de la línea */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(255, 255, 255); /* Color de la línea */
+    height: 1.5px; /* Grosor de la línea */
+}
+.solicitud-container textarea[readonly] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    height: 100px; /* Ajusta la altura según tus necesidades */
+    resize: none; /* Evita que el usuario pueda cambiar el tamaño */
+}
+.estado-solicitud-container button {
+    padding: 10px 20px;
+    background-color: orange; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Margen superior */
+    display: block; /* Hace que el botón ocupe su propia línea */
+    margin-left: auto; /* Junto con margin-right: auto, centra el botón */
+    margin-right: auto;
+}
+
+.solicitud-container, .estado-solicitud-container, .navbar, footer {
+    background: #ffffff; /* Fondo blanco sólido */
+    /* Resto de tus estilos para estos contenedores... */
+}
+
+.estado-en-revision {
+    color: orange; /* Color naranja para 'En revisión' */
+    font-weight: bold; /* Aplica negrita */
+}
+
+.estado-aprobada {
+    color: green; /* Color verde para 'Aprobada' */
+    font-weight: bold; /* Aplica negrita */
+}
+
+.estado-observada {
+    color: red; /* Color rojo para 'Observada' */
+    font-weight: bold; /* Aplica negrita */
+}

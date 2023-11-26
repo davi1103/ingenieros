@@ -1,0 +1,29 @@
+/* Estilos para el carnet virtual */
+.carnet-container {
+    margin-top: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 30%; /* Más estrecho para un estilo de carnet */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+}
+
+.carnet-container img {
+    max-width: 100px; /* Tamaño de la foto en el carnet */
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.carnet-container h4 {
+    margin-top: 10px;
+    color: #333;
+}
+
+.carnet-container p {
+    color: #555;
+}

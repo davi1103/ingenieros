@@ -1,0 +1,65 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Ajusta la fuente según la imagen */
+}
+/* Estilo de la sección con la imagen de fondo */
+.hero-section {
+    background-image: url(../img/banner-bg.jpg); /* Asegúrate de reemplazar 'background.jpg' con la ruta real de tu imagen */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+/* Estilos para el encabezado h1 */
+h1 {
+    margin: 0 0 10px 0;
+    font-size: 3.5em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    position: relative;
+    font-family: 'Merriweather', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+}
+
+/* Pseudo-elemento para la línea separadora */
+h1:after {
+    content: '';
+    display: block;
+    width: 60%; /* Ajusta el ancho de la línea a tu gusto */
+    padding-top: 2px; /* Ajusta el grosor de la línea */
+    margin: 20px auto ; /* Aumenta el margen superior para separar la línea del título */
+    background-color: white;
+}
+
+/* Contenedor de los botones */
+.buttons {
+    display: flex; /* Usa flexbox para alinear los botones horizontalmente */
+    justify-content: center; /* Centra los botones en el contenedor */
+    gap: 20px; /* Espacio entre los botones */
+}
+
+/* Estilos para los botones */
+.buttons button {
+    background-color: white;
+    border: none;
+    padding: 15px 30px; /* Aumenta el relleno para hacer el botón más grande */
+    margin: 0; /* Quitar el margen para que el espacio sea controlado por gap en .buttons */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 1.2em; /* Tamaño de fuente más grande */
+    font-family: 'Lato', sans-serif; /* Cambia 'Lato' por la fuente que prefieras */
+    transition: background-color 0.3s;
+}
+
+/* Cambio de color al pasar el ratón por encima */
+.buttons button:hover {
+    background-color: #c4c2c2;
+}

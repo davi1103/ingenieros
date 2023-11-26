@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar una Solicitud de Suscripción</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/registrar.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">Colegio de Ingenieros del Perú</a>
+    </div>
+
+
+    <div class="container">
+        <h2>Registrar una Solicitud de Suscripción</h2>
+        <form action="index.html" method="get">
+            <div class="row">
+                <div class="form-group">
+                    <label for="dni">DNI (8 números):</label>
+                    <input type="text" id="dni" name="dni" pattern="\d{8}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="firstName">Nombres:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="form-group">
+                    <label for="lastName">Apellidos:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthdate">Fecha de Nacimiento:</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="form-group">
+                    <label for="fileUpload">Adjuntar título (PDF):</label>
+                    <input type="file" id="fileUpload" name="fileUpload" accept=".pdf" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="photoUpload">Adjuntar foto de identifcación (JPG, PNG):</label>
+                    <ul>
+                        <li>Vestir ropa casual o sport elegante.</li>
+                        <li>No usar lentes de medida u oscuros.</li>
+                        <li>No usar túnica (a menos que profese una religión que lo exija).</li>
+                        <li>La imagen debe ser digital reciente, a color y con fondo blanco.</li>
+                        <li>La imagen no debe presentar fallas de origen (oscura, movida, etc).</li>
+                    </ul>
+                    <input type="file" id="photoUpload" name="photoUpload" accept=".jpg, .jpeg, .png" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <input type="submit" value="Enviar Solicitud">
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <!-- Puedes añadir contenido al footer aquí si lo deseas -->
+    </footer>
+</body>
+</html>

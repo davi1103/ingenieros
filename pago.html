@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constultar</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/consultar.css">
+    <link rel="stylesheet" href="css/pago.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">Colegio de Ingenieros del Perú</a>
+    </div>
+
+    <br>
+
+    <div class="container_pago">
+        <h1>Pago - Colegio de Ingenieros del Perú</h1>
+        
+        <form onsubmit="return validarFormulario()">
+            <div class="tables-container">
+                <!-- Formulario de Pago -->
+                <div class="payment-table">
+                    <h2>Formulario de Pago</h2>
+                    <table>
+                        <tr>
+                            <td>Número de Tarjeta:</td>
+                            <td><input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" id="numTarjeta" name="numTarjeta" oninput="validarTarjeta(this)" required></td>
+                        </tr>
+                        <tr>
+                            <td>Fecha de Expiración:</td>
+                            <td><input type="text" id="fecha-expiracion" name="fechaExpiracion" required></td>
+                        </tr>
+                        <tr>
+                            <td>Cód. de Verificación:</td>
+                            <td><input type="text" placeholder="CVV" id="codVerificacion" name="codVerificacion" oninput="validarCVV(this)" required></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Resumen del Pedido -->
+                <div class="summary-table">
+                    <h2>Resumen del Pedido</h2>
+                    <table>
+                        <tr>
+                            <td>Código:</td>
+                            <td>001</td>
+                        </tr>
+                        <tr>
+                            <td>Total a Pagar:</td>
+                            <td>S/. 100.00</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <button type="submit">Realizar Pago</button>
+        </form>
+    </div>
+
+    <script>
+        function validarTarjeta(input) {
+        // Elimina guiones existentes
+        let numeroTarjeta = input.value.replace(/-/g, '');
+        // Agrega guiones cada 4 dígitos
+        if (numeroTarjeta.length > 0) {
+            numeroTarjeta = numeroTarjeta.match(new RegExp('.{1,4}', 'g')).join('-');
+        }
+
+        input.value = numeroTarjeta; // Actualiza el valor del input
+
+        // Valida la longitud (debe ser 16 números más 3 guiones)
+        if (numeroTarjeta.length !== 19) {
+            input.setCustomValidity("Número de tarjeta inválido. Debe contener 16 dígitos.");
+        } else {
+            input.setCustomValidity("");
+        }
+    }
+
+    $(function() {
+    $('#fecha-expiracion').datepicker({
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: true,
+        dateFormat: 'mm/yy',
+        onClose: function(dateText, inst) {
+            var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+            var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+            $(this).datepicker('setDate', new Date(year, month, 1));
+        }
+    });
+});
+
+        function validarCVV(input) {
+            const regexCVV = /^\d{3}$/;
+            if (!regexCVV.test(input.value)) {
+                input.setCustomValidity("CVV inválido. Debe contener 3 dígitos.");
+            } else {
+                input.setCustomValidity("");
+            }
+        }
+
+        function validarFormulario() {
+            var form = document.forms[0];
+            if (!form.checkValidity()) {
+                alert('Por favor, completa correctamente todos los campos.');
+                return false;
+            }
+
+            // Redireccionar al index.html
+            window.location.href = 'index.html';
+            return true;
+        }
+    </script>
+
+    <br><br>
+
+    <footer>
+        <!-- Puedes añadir contenido al footer aquí si lo deseas -->
+    </footer>
+</body>
+</html>
